@@ -31,9 +31,9 @@ class StorePegawaiRequest extends FormRequest
             'email'  => 'required',
             'telepon'  => 'required',
             'status' => 'required',
-            'keterangan' => 'nullable',
+            'keterangan' => 'nullable|array',
             'foto_pegawai' => 'required',
-            'sk_pegawai' => 'required',
+            'file_sk_pegawai' => 'required',
         ];
     }
 }

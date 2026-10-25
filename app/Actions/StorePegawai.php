@@ -58,11 +58,10 @@ class StorePegawai
             'nip' => $request->nip,
             'jenis_kelamin' => $request->jenis_kelamin,
             'jabatan' => $request->jabatan,
-            'opd' => $request->opd,
             'email' => $request->email,
             'telepon' => $request->telepon,
             'status' => $request->status,
-            'keterangan' => implode(',', $request->keterangan),
+            'keterangan' => $request->filled('keterangan') ? implode(',', $request->keterangan) : null,
             'foto_pegawai' => $filenamefoto,
             'file_sk_pegawai' => $filenameSK,
         ]);

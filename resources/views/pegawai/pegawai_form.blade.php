@@ -132,7 +132,7 @@
                     <label for="foto" class="form-label fw-semibold">Foto Pegawai</label>
                     <input type="file" class="form-control shadow-sm" id="foto" name="foto_pegawai"
                         accept="image/*">
-                    @error('foto')
+                    @error('foto_pegawai')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -141,7 +141,7 @@
                     <label for="sk_pegawai" class="form-label fw-semibold">File SK Pegawai</label>
                     <input type="file" class="form-control shadow-sm" id="sk_pegawai" name="file_sk_pegawai"
                         accept=".pdf,.doc,.docx">
-                    @error('sk_pegawai')
+                    @error('file_sk_pegawai')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
