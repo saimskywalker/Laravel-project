@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdatePegawaiRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class UpdatePegawaiRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +23,12 @@ class UpdatePegawaiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama' => 'required',
+            'nip' => ['required', Rule::unique('pegawai', 'nip')->ignore($this->route('pegawai'))],
+            'jabatan' => 'required',
+            'email' => 'required',
+            'telepon' => 'required',
+            'status' => 'required',
         ];
     }
 }

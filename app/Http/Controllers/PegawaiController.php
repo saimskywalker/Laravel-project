@@ -61,8 +61,9 @@ class PegawaiController extends Controller
      */
     public function update(UpdatePegawaiRequest $request, Pegawai $pegawai)
     {
-        $pegawai = Pegawai::findOrFail($pegawai);
-        $pegawai->update($request->all());
+        $pegawai->update($request->validated());
+
+        return redirect()->route('pegawai.index')->with('sukses', 'data pegawai berhasil diperbarui');
     }
 
     /**
